@@ -4,9 +4,7 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
- */
+
 class SaintFactory extends Factory
 {
     /**
@@ -17,7 +15,10 @@ class SaintFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'name' => fake() -> firstName(),
+            'birth_place' => fake() -> address(),
+            'blessing_date' => fake() -> dateTime(),
+            'number_of_miracles' => fake() -> numberBetween(1, 99),
         ];
     }
 }
